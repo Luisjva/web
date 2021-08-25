@@ -1,0 +1,119 @@
+/*     CARTA CONTENEDOR     */
+.carta__contenedor {
+  display: grid;
+  grid-template-areas:
+    "pos1"
+    "pos2"
+    "pos4"
+    "pos3";
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  padding: 0.25rem;
+}
+
+.contenedor__carta-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.contenedor__carta-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50% 50%;
+}
+
+.carta--posicion-1 {
+  grid-area: pos1;
+}
+
+.carta--posicion-2 {
+  grid-area: pos2;
+}
+
+.carta--posicion-3 {
+  grid-area: pos3;
+}
+
+.carta--posicion-4 {
+  grid-area: pos4;
+}
+
+/*     CARTAS     */
+.carta {
+  background-position: center;
+  background-size: cover;
+  margin: 0.25rem;
+  padding: 0.5rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.carta:hover {
+  box-shadow: 2px 2px 8px #000;
+}
+
+.carta-1 {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 225px;
+}
+
+.carta-2 {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.carta-3 {
+  background-color: #fff;
+  display: grid;
+  grid-template-areas:
+    "img titu"
+    "img date"
+    "img text";
+  grid-template-columns: auto auto;
+  max-height: 116.5px;
+  padding: 0 0.5rem 0 0;
+}
+
+.carta-3 img {
+  grid-area: img;
+  height: 116.5px;
+  object-fit: cover;
+  margin-right: 0.5rem;
+  width: 116.5px;
+}
+
+.carta h3 {
+  grid-area: titu;
+  font-size: 1.7rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.carta p {
+  grid-area: text;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  overflow: hidden;
+}
+
+.carta time {
+  font-size: 0.7rem;
+  grid-area: date;
+  opacity: 0.7;
+}
+
+/*     Media screen     */
+@media screen and (min-width: 500px) {
+  .carta__contenedor {
+    grid-template-areas:
+      "pos1 pos2"
+      "pos3   pos4";
+    grid-template-columns: 1fr 1fr;
+  }
+}
